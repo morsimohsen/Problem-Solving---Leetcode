@@ -1,8 +1,22 @@
-class Solution:
-    def searchInsert(self, nums: List[int], target: int) -> int:
-        if target in nums:
-            return nums.index(target)
-        else:
-            nums.append(target)
-            nums.sort()
-            return nums.index(target)
+class Solution {
+public:
+    int searchInsert(vector<int>& nums, int target) {
+        int l=0,r=nums.size()-1;
+        int middle=(l+r)/2;
+        while(l<r){
+            middle=(l+r)/2;
+            if(nums[middle]<target){
+                l=middle+1;
+            }
+            else if(nums[middle]>target){
+                r=middle-1;
+            }
+            else if(nums[middle]==target){
+                return middle;
+            }
+        }
+        if(nums[l]<target)
+            return l+1;
+        return l;
+    }
+};
