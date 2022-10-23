@@ -8,7 +8,6 @@ public:
                     
                 }
         }
-        cout << i << endl;
         return i == s.size() ? true : false;
     }
 };
