@@ -9,18 +9,25 @@
 class Solution {
 public:
     ListNode *detectCycle(ListNode *head) {
-        ListNode *slow = head, *fast = head;
-        while (fast && fast->next) {
-            slow = slow->next;
+        ListNode*slow,*fast,*intersection;
+        fast=head;
+        slow=head;
+        intersection=head;
+        while(fast!=NULL && fast->next!=NULL){
             fast = fast->next->next;
-            if (slow == fast) break;
-        }
-        if (!(fast && fast->next)) 
-            return NULL;
-        while (head != slow) {
-            head = head->next;
             slow = slow->next;
+            
+            if(fast == slow){
+                
+                while(slow != intersection){
+                    
+                    slow = slow->next;
+                    intersection = intersection->next;
+                }
+                return intersection;
+            }
         }
-        return head;
+        
+        return nullptr;
     }
 };
