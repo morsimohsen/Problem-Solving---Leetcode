@@ -1,7 +1,7 @@
 class Solution {
 public:
     string decodeString(string s) {
-        stack<char> st, d, f;
+        stack<char> st;
         string ss = "", ch = "",ans = "", x = "";
         for(auto c : s) {
           
