@@ -15,7 +15,6 @@ public:
                 return false;
             st.insert(sum);
 
-            cout << sum << endl;
         }
         return true;
     }
