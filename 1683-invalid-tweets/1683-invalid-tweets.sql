@@ -4,4 +4,4 @@ select
 from
     tweets
 where
-    Length(content) >= 15
+    Length(content) > 15
